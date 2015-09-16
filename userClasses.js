@@ -17,43 +17,13 @@ Your Tasks
 */
 
 
-//create SuperClass with one parameters -  network
-function SuperUser() {
-
-}
-
-// create class method
-SuperUser.prototype.network = function(food) {
-  return 'i need lunch', food;
-};
-
-//superUser extends from groupUser class
-SuperUser.prototype = Object.create(GroupUser.prototype);
 
 
 
 /*--------------------------------------*/
-//create GroupUser class with two parameters - userName, password
-function GroupUser() {
 
-}
-
-// create class method
-GroupUser.prototype.network = function(userName) {
-  return 'dont know what im doing!!! ', userName;
-};
-//groupUser extend from user class
-GroupUser.prototype = Object.create(User.prototype);
 
 /*--------------------------------------*/
-//create User class with three parameter - firstName, lastName, employeeNumber(int)
-function User(fName, lName, empNum) {
-  this._fName = fName;
-  this._lName = lName;
-  this._empNum  = empNum;
-
-}
-
 
 /*--------------------------------------*/
 //extending from other classes
@@ -68,3 +38,5 @@ function extend(destination, source) {
 extend(SuperUser.prototype, GroupUser.prototype);
 extend(GroupUser.prototype, User.prototype);
 extend(User.prototype, GroupUser.prototype);
+
+//module.exports = userClasses;
