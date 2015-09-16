@@ -24,18 +24,29 @@ address
 
 */
 
+var User = require('./User.js');
+var GroupUser = require('./GroupUser');
+var SuperUser = require('./SuperUser');
 
 
-var userClasses = requires('./userClasses');
+function Reflector(obj) {
+  if(Object.getPrototypeOf(obj) !== null) {
+    console.log('testing the obj', obj.constructor.name);
+    console.log(Object.keys(obj)); // methods
+    // console.log(obj.constructor.name);
+    // console.log(Object.getOwnPropertyNames(obj));
+    // console.log(Object.getPrototypeOf(obj));
+    Reflector(Object.getPrototypeOf(obj));
 
-var Reflector = function (obj) {
+  }
 
-};
-
-var naomi = new User('naomi', 'owens', 123);
+}
 var email = new GroupUser('dontGetIt', '123QWE');
 var lunch = new SuperUser('chicken');
+var naomi = new User('naomi', 'owens', 123);
 
-console.log(naomi);
-console.log(email);
-console.log(lunch);
+// var plsWork = Reflector(Object.getPrototypeOf(email));
+
+
+Reflector(lunch);
+
