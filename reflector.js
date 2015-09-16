@@ -33,9 +33,6 @@ function Reflector(obj) {
   if(Object.getPrototypeOf(obj) !== null) {
     console.log('testing the obj', obj.constructor.name);
     console.log(Object.keys(obj)); // methods
-    // console.log(obj.constructor.name);
-    // console.log(Object.getOwnPropertyNames(obj));
-    // console.log(Object.getPrototypeOf(obj));
     Reflector(Object.getPrototypeOf(obj));
 
   }
